@@ -13,6 +13,7 @@ body {
 
 header {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 header,
@@ -21,6 +22,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 0 10px;
 }
 
 form input,
@@ -31,14 +34,18 @@ form button {
   border: none;
   background: white;
   border-radius: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 form button {
   color: rgb(255, 200, 0);
   background: white;
   cursor: pointer;
-  transition: all 0.3 ease;
+  transition: all 0.3s ease;
   margin-left: 0.5rem;
+  max-width: 50px;
 }
 
 form button:hover {
@@ -55,11 +62,14 @@ form button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .todo-list {
   min-width: 30%;
   list-style: none;
+  width: 100%;
+  max-width: 600px;
 }
 
 .todo {
@@ -73,6 +83,8 @@ form button:hover {
   align-items: center;
   transition: 0.5s;
   border-radius: 2rem;
+  width: 100%;
+  max-width: 600px;
 }
 
 .todo li {
@@ -154,4 +166,68 @@ select {
 .select::hover::after {
   background: white;
   color: rgb(255, 200, 0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.2rem;
+  }
+
+  form input,
+  form button {
+    font-size: 1.5rem;
+  }
+
+  .todo {
+    font-size: 1.3rem;
+  }
+
+  .todo-container {
+    margin-top: 20px;
+  }
+
+  .todo-list {
+    width: 90%;
+  }
+
+  .todo {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  select {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1rem;
+  }
+
+  form input {
+    font-size: 1.3rem;
+    max-width: 100%;
+  }
+  form button {
+    max-width: 15%;
+  }
+
+  .todo {
+    font-size: 1.2rem;
+  }
+
+  .todo-container {
+    padding: 10px;
+  }
+
+  .todo-list {
+    width: 100%;
+  }
+
+  .select {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
